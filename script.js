@@ -74,3 +74,13 @@ const headerObserver = new IntersectionObserver(stickyNav, {
 });
 
 headerObserver.observe(header);
+
+// -------------- SCROLL ----------------------- //
+document.querySelector(".nav__links").addEventListener("click", function (e) {
+  e.preventDefault();
+
+  if (e.target.classList.contains("nav__item--link")) {
+    const id = e.target.getAttribute("href");
+    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+  }
+});

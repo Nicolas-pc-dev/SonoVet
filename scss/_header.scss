@@ -4,9 +4,8 @@
   background-color: #f3f3f3;
 
   .nav {
-    height: 9rem;
+    height: 13rem;
     width: 100%;
-    padding: 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,8 +13,8 @@
 
     &--logo {
       margin-top: 3rem;
-      width: 45rem;
-      height: 19rem;
+      width: 39rem;
+      height: 14rem;
     }
 
     &__links {
@@ -73,7 +72,7 @@
     justify-content: space-between;
 
     &--title {
-      width: 70%;
+      width: 73%;
       height: 50%;
       margin-top: 10rem;
       padding-left: 5rem;

@@ -14,13 +14,13 @@
     color: $primary-title-color;
     h2 {
       font-size: 8rem;
-      margin-bottom: 10rem;
+      margin: 9rem auto 7rem;
     }
   }
 
   &__container {
     margin: 5rem auto 0;
-    width: 110rem;
+    width: 130rem;
     height: 70%;
 
     &__btns {
@@ -53,28 +53,22 @@
     &--active {
       border-radius: 30px;
       width: 100%;
-      height: 45rem;
-      display: grid;
-      grid-template-columns: 1fr 3fr;
-      grid-template-rows: 1fr 2fr;
-      column-gap: 4rem;
+      height: 30rem;
+      display: flex;
+      margin-top: 10rem;
 
       img {
-        width: 100%;
+        width: 60%;
         height: 90%;
-        grid-row: 2 / 3;
         border-radius: 10px;
       }
 
       h5 {
         font-size: 3rem;
-        grid-column: 1 / 4;
-        align-self: center;
       }
       p {
         font-size: 2.5rem;
-        grid-column: 2 / 4;
-        grid-row: 2 / 3;
+        margin: 3rem 0 0 10rem;
       }
     }
 

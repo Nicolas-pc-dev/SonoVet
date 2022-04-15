@@ -3,7 +3,7 @@
   height: 15vh;
   background-color: #f3f3f3;
   padding-top: 4rem;
-
+  border-top: 1px solid #ddd;
   .icons__container {
     display: flex;
     justify-content: center;
@@ -11,7 +11,7 @@
     i {
       font-size: 5rem;
       color: $secondary-text-color;
-      margin-right: 5rem;
+      margin-right: 10rem;
       cursor: pointer;
 
       &:hover {

@@ -19,9 +19,8 @@ body {
 }
 
 .header .nav {
-  height: 9rem;
+  height: 13rem;
   width: 100%;
-  padding: 4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -36,8 +35,8 @@ body {
 
 .header .nav--logo {
   margin-top: 3rem;
-  width: 45rem;
-  height: 19rem;
+  width: 39rem;
+  height: 14rem;
 }
 
 .header .nav__links {
@@ -108,7 +107,7 @@ body {
 }
 
 .header .header__sections--title {
-  width: 70%;
+  width: 73%;
   height: 50%;
   margin-top: 10rem;
   padding-left: 5rem;
@@ -180,7 +179,7 @@ body {
   max-width: 135rem;
   height: 57rem;
   position: relative;
-  margin: 0 auto;
+  margin: 8rem auto 0;
   overflow: hidden;
 }
 
@@ -282,12 +281,12 @@ body {
 
 .service--title h2 {
   font-size: 8rem;
-  margin-bottom: 10rem;
+  margin: 9rem auto 7rem;
 }
 
 .service__container {
   margin: 5rem auto 0;
-  width: 110rem;
+  width: 130rem;
   height: 70%;
 }
 
@@ -328,44 +327,26 @@ body {
 .service__container--active {
   border-radius: 30px;
   width: 100%;
-  height: 45rem;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 3fr;
-      grid-template-columns: 1fr 3fr;
-  -ms-grid-rows: 1fr 2fr;
-      grid-template-rows: 1fr 2fr;
-  -webkit-column-gap: 4rem;
-          column-gap: 4rem;
+  height: 30rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 10rem;
 }
 
 .service__container--active img {
-  width: 100%;
+  width: 60%;
   height: 90%;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 1;
-  grid-row: 2 / 3;
   border-radius: 10px;
 }
 
 .service__container--active h5 {
   font-size: 3rem;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-column: 1 / 4;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
 }
 
 .service__container--active p {
   font-size: 2.5rem;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 2;
-  grid-column: 2 / 4;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 1;
-  grid-row: 2 / 3;
+  margin: 3rem 0 0 10rem;
 }
 
 .footer {
@@ -373,6 +354,7 @@ body {
   height: 15vh;
   background-color: #f3f3f3;
   padding-top: 4rem;
+  border-top: 1px solid #ddd;
 }
 
 .footer .icons__container {
@@ -387,7 +369,7 @@ body {
 .footer .icons__container i {
   font-size: 5rem;
   color: #595959;
-  margin-right: 5rem;
+  margin-right: 10rem;
   cursor: pointer;
 }
 
