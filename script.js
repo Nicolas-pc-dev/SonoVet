@@ -1,5 +1,82 @@
 "use strict";
-const log = (log) => console.log(log);
+// const log = (log) => console.log(log);
+
+// -------------------- STICKY NAV -----------------------//
+
+const header = document.querySelector(".header");
+const nav = document.querySelector(".nav");
+const navHeight = nav.getBoundingClientRect().height;
+
+const stickyNav = function (entries) {
+  const [entry] = entries;
+
+  if (!entry.isIntersecting) nav.classList.add("sticky");
+  else nav.classList.remove("sticky");
+};
+const headerObserver = new IntersectionObserver(stickyNav, {
+  root: null,
+  threshold: 0,
+  rootMargin: `-${navHeight}px`,
+});
+
+headerObserver.observe(header);
+
+// -------------- SCROLL BY CLICK----------------------- //
+document.querySelector(".nav__links").addEventListener("click", function (e) {
+  e.preventDefault();
+  console.log(e.target);
+
+  const siblings = e.target
+    .closest(".nav__links")
+    .querySelectorAll(".nav__item--link");
+
+  siblings.forEach((sibling) => sibling.classList.remove("active"));
+
+  if (e.target.classList.contains("nav__item--link")) {
+    const ref = e.target.getAttribute("href");
+    e.target.classList.add("active");
+
+    document.querySelector(ref).scrollIntoView({ behavior: "smooth" });
+  }
+  // Dynamic selection
+});
+
+// ---------- REVEALING ELEMENTS ON SCROLL ---------- //
+const sections = document.querySelectorAll(".section");
+
+const fixedId = function (str) {
+  return str.padStart(str.length + 1, "#");
+};
+
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
+
+  if (!entry.isIntersecting) return;
+
+  entry.target.classList.remove("section--hidden");
+
+  const navObserve = document.querySelectorAll(".nav__item--link");
+  const idMatch = entry.target.getAttribute("id");
+
+  navObserve.forEach((link) => {
+    link.getAttribute("href") === fixedId(idMatch)
+      ? link.classList.add("active")
+      : link.classList.remove("active");
+  });
+  // observer.unobserve(entry.target);
+};
+
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.15,
+});
+
+sections.forEach((section) => {
+  sectionObserver.observe(section);
+  section.classList.add("section--hidden");
+});
+
+// ------------- SLIDER ------------------- //
 
 const slides = document.querySelectorAll(".about__container--card");
 const btnLeft = document.querySelector(".about__btn--left");
@@ -20,7 +97,6 @@ const nextSlide = function () {
 
 const prevSlide = function () {
   curSlide === 0 ? (curSlide = maxSlide - 1) : curSlide--;
-  console.log(curSlide);
   goToSlide(curSlide);
 };
 goToSlide(0);
@@ -32,12 +108,6 @@ btnLeft.addEventListener("click", prevSlide);
 const tabsContainer = document.querySelector(".service__container__btns");
 const serviceBtns = document.querySelectorAll(".service--btn");
 const tabsContent = document.querySelectorAll(".service__content");
-
-// serviceBtns.forEach((button) =>
-//   button.addEventListener("click", function () {
-//     console.log("click");
-//   })
-// );
 
 tabsContainer.addEventListener("click", function (e) {
   const clicked = e.target.closest(".service--btn");
@@ -53,34 +123,4 @@ tabsContainer.addEventListener("click", function (e) {
   document
     .querySelector(`.service__container--${clicked.dataset.tab}`)
     .classList.add("service__container--active");
-});
-
-// -------------------- STICKY NAV -----------------------//
-
-const header = document.querySelector(".header");
-const nav = document.querySelector(".nav");
-const navHeight = nav.getBoundingClientRect().height;
-
-const stickyNav = function (entries) {
-  const [entry] = entries;
-  log(entry);
-  if (!entry.isIntersecting) nav.classList.add("sticky");
-  else nav.classList.remove("sticky");
-};
-const headerObserver = new IntersectionObserver(stickyNav, {
-  root: null,
-  threshold: 0,
-  rootMargin: `-${navHeight}px`,
-});
-
-headerObserver.observe(header);
-
-// -------------- SCROLL ----------------------- //
-document.querySelector(".nav__links").addEventListener("click", function (e) {
-  e.preventDefault();
-
-  if (e.target.classList.contains("nav__item--link")) {
-    const id = e.target.getAttribute("href");
-    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
-  }
 });

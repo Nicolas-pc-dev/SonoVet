@@ -7,7 +7,11 @@
   transition: transform 1s, opacity 1s;
   background-color: #fff;
 
-  // transform: scale(0.5);
+  h3 {
+    font-size: 6.2rem;
+    text-align: center;
+    color: $primary-title-color;
+  }
 
   &__container {
     max-width: 135rem;
