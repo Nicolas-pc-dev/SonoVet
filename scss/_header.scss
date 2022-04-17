@@ -4,7 +4,7 @@
   background-color: #f3f3f3;
 
   .nav {
-    height: 13rem;
+    height: 10rem;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -12,9 +12,8 @@
     z-index: 100;
 
     &--logo {
-      margin-top: 3rem;
-      width: 39rem;
-      height: 14rem;
+      width: 32rem;
+      height: 10rem;
     }
 
     &__links {
@@ -26,7 +25,7 @@
 
       .nav__item {
         width: 11rem;
-        height: 5rem;
+        height: 4.5rem;
         padding: 1rem;
         text-align: center;
         transition: all 0.2s;
@@ -42,7 +41,7 @@
 
         &--link {
           text-decoration: none;
-          font-size: 3rem;
+          font-size: 2rem;
           font-weight: 300;
           color: $secondary-text-color;
         }
@@ -50,8 +49,7 @@
         &:last-child {
           background-color: $primary-title-color;
           border-radius: 10px;
-          width: 15rem;
-          height: 6rem;
+          width: 10rem;
 
           a {
             color: #fff;
@@ -83,29 +81,30 @@
       color: $secondary-text-color;
 
       h1 {
-        font-size: 8.5rem;
+        font-size: 5.5rem;
         line-height: 1.3;
         letter-spacing: 0.5px;
       }
       span {
         color: $primary-title-color;
         letter-spacing: 0.5px;
-        font-size: 8.5rem;
+        font-size: 5.5rem;
       }
       p {
-        font-size: 4rem;
+        font-size: 3rem;
         font-weight: 300;
         line-height: 1.2;
         width: 100%;
       }
       .learn__more {
-        font-size: 4.2rem;
+        font-size: 2.8rem;
         color: $primary-title-color;
         border: none;
         position: absolute;
-        top: 70%;
+        top: 85%;
         left: 5%;
         cursor: pointer;
+        background-color: transparent;
       }
     }
 

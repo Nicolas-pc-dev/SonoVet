@@ -10,7 +10,7 @@
 
   &__personal {
     text-align: center;
-    font-size: 3.8rem;
+    font-size: 3rem;
 
     h5 {
       color: $primary-title-color;
@@ -19,12 +19,12 @@
     }
 
     &--icons {
-      margin-top: 2rem;
+      margin-top: 1rem;
       display: flex;
       justify-content: space-evenly;
 
       i {
-        font-size: 3rem;
+        font-size: 2rem;
         color: $primary-title-color;
         cursor: pointer;
 
@@ -38,12 +38,12 @@
 
   &__business {
     img {
-      width: 320px;
-      height: 45px;
+      width: 200px;
+      height: 30px;
     }
     &--p {
-      margin-top: 2rem;
-      font-size: 1.5rem;
+      margin-top: 1rem;
+      font-size: 1.2rem;
       color: $secondary-text-color;
       text-align: center;
     }
